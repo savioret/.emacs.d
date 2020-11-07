@@ -84,10 +84,10 @@
 ;; Uncomment this block first time emacs runs this configuration !!!
 ;; After all packages install, re-comment
 ;; ----------------------------------------------------------------
-;(eval-when-compile
-;  (require 'use-package)
-;  (setq use-package-always-ensure t)
-;  )
+;; (eval-when-compile
+;;   (require 'use-package)
+;;   (setq use-package-always-ensure t)
+;;   )
 
 ;; local packages
 (require 'redo+)
@@ -387,7 +387,7 @@
 ;; Switch between header and source of a file
 (global-set-key [f12] 'ff-find-other-file)
 
-# Change coding style
+;; Change coding style
 (global-set-key (kbd "C-c 1") 'ja/set-bsd-style)
 (global-set-key (kbd "C-c 2") 'ja/set-whitesmith-style)
 
