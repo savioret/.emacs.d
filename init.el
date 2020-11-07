@@ -71,8 +71,26 @@
 
 ;;;;;;;;;;;;;;;;;;; PACKAGES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; external package initialize
+(load "packages.el")
+
+;; use-page auto installation
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package)
+  )
+
+;; ----------------------------------------------------------------
+;; Uncomment this block first time emacs runs this configuration !!!
+;; After all packages install, re-comment
+;; ----------------------------------------------------------------
+;(eval-when-compile
+;  (require 'use-package)
+;  (setq use-package-always-ensure t)
+;  )
+
 ;; local packages
-(require 'redo)
+(require 'redo+)
 
 ;; (require 'swbuff)
 ;; (global-set-key [C-tab] 'swbuff-switch-to-next-buffer)
@@ -85,20 +103,6 @@
 ;; (setq
 ;;  uniquify-buffer-name-style 'reverse
 ;;  uniquify-separator ":")
-
-;; external package initialize
-(load "packages.el")
-
-;; use-page auto installation
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package)
-  )
-;(setq use-package-always-ensure t)
-(eval-when-compile
-  (require 'use-package)
-  ;(setq use-package-always-ensure t)
-  )
 
 (use-package cycbuf
   :config
